@@ -1,85 +1,160 @@
-@use '../utilities/classes.scss' as * ;
+@use "../utilities/classes.scss" as *;
 
-#home{
+#home {
+  position: relative;
+  // padding:20%;
+
+  #header {
+    display: flex;
+    padding: 30px 0 !important;
+    justify-content: space-around;
+    align-items: center;
+    .header_logo {
+      display: grid;
+      .name {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: maroon;
+      }
+
+      .tag {
+        transform: translateY(-5px);
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 10px;
+        opacity: 0.7;
+        letter-spacing: 10px;
+        @extend .small;
+      }
+    }
+
+    .header_link {
+      @extend .small;
+      @extend %link;
+    }
+
+    .menu-toggle {
+      font-size: 10px;
+      user-select: none;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+  }
+
+  #hero {
     position: relative;
-    // padding:20%;
+    text-align: center;
+    .hero_text {
+      padding: 10%;
+      h1 {
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-weight: 300;
+      }
+
+      .hero-tag {
+        font-size: 14px;
+        opacity:.3;
+        font-weight: 300;
+      }
+    }
+  }
 
 
-    #header{
-        display:flex;
-        padding:30px 0 !important;
-        justify-content: space-around;
-        align-items: center;
-        .header_logo{
-            display: grid;
-            .name{
-                font-size:1.6rem;
-                font-weight: 800;
-                color:maroon;
-            }
+  #footer{
+      .socials{
+          display:flex;
+          gap:20px;
+          justify-content: center;
+          .social-link{
+              width:30px;
+              display:grid;
+              place-items:center;
+              height:30px;
+              margin:5px;
+              font-size:10px;
+              color:inherit;
+              
+              background:#eee;
+              border-radius:50px;
+          }
+      }
 
-            .tag{
-                transform: translateY(-5px);
-                text-transform: uppercase;
-                font-weight:300;
-                opacity:.7;
-                letter-spacing: 10px;
-                @extend .small;
-            }
-        }
+      .copyright{
+          padding:20px 0 10px 0;
+          text-align:center;
+          font-size:12px;
+          &>*{
+              display:inline-block;
+              padding:0 3px;
+          }
+      }
+  }
 
-        .header_link{
-            @extend .small;
-            @extend %link;
-        }
+
+
+
+  .img-show-case {
+    display: flex;
+    justify-content: space-around;
+
+    > *:nth-child(odd) {
+      margin-top: 20%;
+    }
+  }
+
+  .custom-heading {
+    padding: 25% 0;
+    text-align: center;
+
+    h2 {
+      max-width: 500px;
+      margin: auto;
+      font-size: 2.5rem;
+    }
+    .sub-heading {
+      padding: 4px 0;
+      max-width: 400px;
+      margin: auto;
+      font-size: 14px;
+    }
+    .tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+  }
+
+  .custom-image {
+    position: relative;
+    margin: 10px 0;
+    
+    .image {
+        position: relative;
+        height:400px;
+      // right:0;
+      height: 400px;
+      width: 300px;
+    //   background: grey;
+      img{
+          position: absolute;
+          width:100%;
+          object-fit: cover;
+          height:0;
+      }
     }
 
-
-
-
-    #hero{
-        // padding:20px 0 0 0;
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
-        align-items: center;
-        position:relative;
-        overflow: hidden;
-        .title{
-            text-align: center;
-            .title-top{
-                display:flex;
-                font-weight:bold;
-                opacity:.5;
-                max-width:500px;
-                margin:auto;
-                justify-content: space-around;
-                // background:red;
-                // justify-content: center;
-                gap:10px;
-            }
-            .title-bottom{
-                font-size: 4rem;
-                font-weight:500
-            }
+    .details {
+      h3 {
+        padding: 4px;
+      }
+      a {
+        display: inline-block;
+        font-size: 12px;
+        & > * {
+          padding: 0 2px;
         }
-
-
-
-
-        .image-container{
-            // animate with and height @framer-motion
-            margin:30px 0 0 0;
-            background-size:cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-color: maroon;
-        }
-
+      }
     }
-
-
-    .d-c{
-        padding:25%
-    }
+  }
 }
