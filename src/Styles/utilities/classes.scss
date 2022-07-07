@@ -1,0 +1,15 @@
+@use '../base/varables.scss';
+
+.small{
+    font-size: 12px;
+}
+
+%link{
+    text-decoration: underline;
+    transition:0.3s;
+    color:inherit;
+    &:hover{
+        text-decoration: none;
+        color:maroon;
+    }
+}
